@@ -1,0 +1,4 @@
+﻿  RacingGameSource.cpp
+c:\users\admin\documents\visual studio 2015\projects\cppprojects\racinggame\racinggame\racinggamesource.cpp(26): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  RacingGame.vcxproj -> C:\Users\admin\Documents\Visual Studio 2015\Projects\CppProjects\RacingGame\Debug\RacingGame.exe
+  RacingGame.vcxproj -> C:\Users\admin\Documents\Visual Studio 2015\Projects\CppProjects\RacingGame\Debug\RacingGame.pdb (Full PDB)
