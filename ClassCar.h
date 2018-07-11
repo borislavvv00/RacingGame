@@ -1,41 +1,52 @@
 #pragma once
 #ifndef ClassCar
 #define ClassCar
-
-int playerCarX, playerCarX1, playerCarX2, playerCarX3, playerCarX4;		//Player's car position x
-int playerCarY;															//Player's car position y
-int enemyCarX, enemyCarX1, enemyCarX2, enemyCarX3, enemyCarX4;			//Enemy's car position x
-int enemyCarY;															//Enemy's car position y
+#include "GameSetUp.h"
 
 class Car
 {
 protected:
-	char sign;
-	int score;
-
+	string sign;
+	void BuildCar(int color);
+	void CarGetCoordinates();
 public:
-	Car()
-	{
-		sign = '0';
-		score = 0;
-		enemyCarX = 1;
-		enemyCarX1 = 2;
-		enemyCarX2 = 3;
-		enemyCarX3 = 4;
-		enemyCarX4 = 5;
-		enemyCarY = 1;
-		playerCarX = 15;
-		playerCarX1 = 16;
-		playerCarX2 = 17;
-		playerCarX3 = 18;
-		playerCarX4 = 19;
-		playerCarY = 8;
-	}
-
-	void BuildingCarPart1();
-	void BuildingCarPart2();
-	void SpawningEnemyCar();
-	void RespawningEnemyCar();
+	int y[9], x[9];
+	void Movement(Direction &dir);
+	void PlacingCar(int i, int j, int color);
 };
+
+class PlayerCar : public Car
+{
+public:
+	PlayerCar()
+	{
+		sign = "0";
+		x[0] = 12;
+		y[0] = 7;
+		CarGetCoordinates();
+	}
+	void GetKeyboardKeys();
+	void TouchTheWall();
+	void CarCrash();
+	friend class EnemyCar;
+};
+
+class EnemyCar : public Car
+{
+private:
+	void SpawningCar();
+public:
+	EnemyCar()
+	{
+		sign = "0";
+		x[0] = 2;
+		y[0] = 3;
+		CarGetCoordinates();
+	}
+	void RespawningCar();
+};
+
+PlayerCar playerCar;
+EnemyCar enemyCar;
 
 #endif // !ClassCar
