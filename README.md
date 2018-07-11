@@ -1,5 +1,5 @@
 # RacingGame
-siple car racing 
+simple car racing 
 
 This is a typically race game.\
 When  you overtaking a car your score increase and when you touch a car you die and start again.\
