@@ -52,13 +52,15 @@ void PlayerCar::TouchTheWall()
 {
 	for (int n = 0; n < 9; n++)
 	{
-		if (y[n] == 1)
+		if (y[n] == 3)
 		{
+			isLeftAllow = false;
 			playerCarDirection = Direction::RIGHT;
 			playerCarDirection = Direction::STOP;
 		}
 		else if (y[n] == aRoad.width - 2)
 		{
+			isRigthAllow = false;
 			playerCarDirection = Direction::LEFT;
 			playerCarDirection = Direction::STOP;
 		}
@@ -66,6 +68,11 @@ void PlayerCar::TouchTheWall()
 		{
 			playerCarDirection = Direction::UP;
 			playerCarDirection = Direction::STOP;
+		}
+		else
+		{
+			isLeftAllow = true;
+			isRigthAllow = true;
 		}
 	}
 }
@@ -79,9 +86,10 @@ void PlayerCar::CarCrash()
 			if (x[n] == enemyCar.x[m] && y[n] == enemyCar.y[m])
 			{
 				score = 0;
-				x[0] = 16;
+				x[0] = 15;
 				y[0] = 7;
 				CarGetCoordinates();
+				system("cls");
 			}
 		}
 	}
