@@ -11,10 +11,16 @@ void PlayerCar::GetKeyboardKeys()
 		switch (_getch())
 		{
 		case 'a':
-			playerCarDirection = Direction::LEFT;
+			if (isLeftAllow == true)
+			{
+				playerCarDirection = Direction::LEFT;
+			}
 			break;
 		case 'd':
-			playerCarDirection = Direction::RIGHT;
+			if (isRigthAllow == true)
+			{
+				playerCarDirection = Direction::RIGHT;
+			}
 			break;
 		case 'w':
 			playerCarDirection = Direction::UP;
