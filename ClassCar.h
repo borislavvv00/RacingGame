@@ -17,9 +17,14 @@ public:
 
 class PlayerCar : public Car
 {
+private:
+	bool isLeftAllow;
+	bool isRigthAllow;
 public:
 	PlayerCar()
 	{
+		isLeftAllow = true;
+		isRigthAllow = true;
 		sign = "0";
 		x[0] = 12;
 		y[0] = 7;
